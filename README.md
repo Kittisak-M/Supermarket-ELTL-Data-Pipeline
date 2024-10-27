@@ -1,5 +1,5 @@
 # Supermarket Data Pipeline Automation
-[supermarket_pipeline_architecture.pdf](https://github.com/user-attachments/files/17534346/supermarket_pipeline_architecture.pdf)
+
 
 ## Overview
 
@@ -11,7 +11,9 @@ This project automates the data pipeline for a supermarket database, data create
 ## Project Contents
 
 ### 1. Data Pipeline Architecture
-![Supermarket Pipeline Architecture](images/supermarket_pipeline_architecture.png)
+
+![supermarket_pipeline_architecture](https://github.com/user-attachments/assets/1c07deff-1a9d-4ad1-90d7-da5eda1d20b8)
+
 
 
 1. **Data Generation and Storage**:
