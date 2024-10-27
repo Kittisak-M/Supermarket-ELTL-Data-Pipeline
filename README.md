@@ -1,4 +1,5 @@
 # Supermarket Data Pipeline Automation
+[supermarket_pipeline_architecture.pdf](https://github.com/user-attachments/files/17534346/supermarket_pipeline_architecture.pdf)
 
 ## Overview
 
