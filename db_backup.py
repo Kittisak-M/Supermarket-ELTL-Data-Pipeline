@@ -1,6 +1,3 @@
-
-
-################## END Google drive def function #########################
 ################## Send e-mail ###################
 import smtplib
 from datetime import datetime
