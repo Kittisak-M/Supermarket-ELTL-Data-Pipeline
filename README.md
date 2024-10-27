@@ -10,7 +10,8 @@ This project automates the data pipeline for a supermarket database, data create
 ## Project Contents
 
 ### 1. Data Pipeline Architecture
-![Data Pipeline Architecture](./data_pipeline_architecture.png) <!-- Replace with your relative image path -->
+![Supermarket Pipeline Architecture](images/supermarket_pipeline_architecture.png)
+
 
 1. **Data Generation and Storage**:
    - **Local Storage**: Data is stored locally at `C:\supermarket`.
