@@ -1,48 +1,43 @@
-# Supermarket Data Pipeline Automation
-
+# Supermarket ELTL pipeline
 
 ## Overview
 
-This project automates the data pipeline for a supermarket database, data created using python, enabling data storage, backup, logging, and notifications. The pipeline utilizes MySQL, Python, and Google Drive, used as data lake, storing data both locally and on the cloud for redundancy. ELTL (Extract, Load, Transform, and Log) processes and SQL database backups are scheduled via Windows Task Scheduler.
+This project automates the data pipeline for a supermarket database created using Python, enabling data storage, backup, logging, and notifications. The pipeline utilizes MySQL, Python, and Google Drive, which serves as a data lake, storing data both locally and in the cloud for redundancy. ELTL (Extract, Load, Transform, and Log) processes and SQL database backups are scheduled via Windows Task Scheduler.
 
 ## Deployment
-   Windows task scheduler is used to automate the Extract, Load, Transform, and Load (ELTL) processes and database backup for supermarket database
+Windows Task Scheduler is used to automate the ELTL processes and database backups for the supermarket database.
 
 ## Project Contents
 
-### 1. Data Pipeline Architecture
+### Data Pipeline Architecture
 
 ![supermarket_pipeline_architecture](https://github.com/user-attachments/assets/1c07deff-1a9d-4ad1-90d7-da5eda1d20b8)
 
+### Supermarket Database Schema
+![supermarket_db_diagram](https://github.com/user-attachments/assets/9586407e-83af-4f2d-9552-ce491626b42c)
 
+### 1. Data Generation and Storage
+- **Local Storage**: Data is stored locally at `C:\supermarket`.
+- **Cloud Storage**: Data is also stored on Google Drive, which serves as a data lake.
 
-1. **Data Generation and Storage**:
-   - **Local Storage**: Data is stored locally at `C:\supermarket`.
-   - **Cloud Storage**: Data is also stored on Google Drive, which serves as a data lake.
+### 2. Database Schema Creation
+- Uses Dbdiagram.io to design the database schema using dimensional modeling technique.
 
-2. **Create Supermarket Database Schema**
-   - use dbigram to create database
-2. **ELTL Process**
-   - Extract Data from mock data using python. 
-   - Load Raw data to `C:\supermarket\raw_data` and Google Drive.
-   - Transform Data and save to `C:\supermarket\transformed_data` and Google Drive.""
-   - load
-2. **Data Backup**:
-   - **Local Backup**: Backups for both raw and transformed data are stored at `C:\supermarket\backup`.
-   - **Google Drive Backup**: An additional layer of redundancy for both raw and transformed data backups.
+### 3. ELTL Process
+- **Extract**: Generates mock data using Python.
+- **Load Raw Data**: Saves raw data to `C:\supermarket\raw_data` and Google Drive.
+- **Transform data**: Processes and saves transformed data to `C:\supermarket\transformed_data` and Google Drive.
+- **Load transform data**: Load transform data to Local MySQL database.
 
-3. **Logging**:
-   - All activities are logged locally in `C:\supermarket\log` and on cloud using Google Drive.
+### 4. Database Backup
+- **Local Backup**: Stores backup database by replace the old one with the new one at `C:\supermarket\backup`.
+- **Google Drive Backup**: Upload the local database file located at `C:\supermarket\backup to Google Drive`.
 
-4. **Database Backup**:
-   - Daily MySQL database backups are saved in:
-     - `C:\supermarket\backup`
-     -  Google Drive
-   - Only the latest version of backups is retained by deleting older backups.
+### 5. Logging
+- Logs all activities locally in `C:\supermarket\log`. The log file is uploaed for backup to Google Drive weekly.
 
-5. **Email Notification**:
-   - Sends a daily email notification to relevant team members with the ELTL process status, error tracking, and runtime performance metrics.
-
+### 6. Email Notification
+- Sends daily email notifications to relevant team members on the status of the ELTL process, including success, failure, error tracking, and runtime performance metrics.
 
 ## Prerequisites
 
@@ -87,7 +82,7 @@ To create an app password for sending emails using Gmail, follow these steps:
 6. Click **Generate**.
 7. Copy the generated app password (16-character code) for use in your application.
 
-## Setting Up Google Drive API
+## Setting Up Google Drive API for backup database, store log files and store raw and tranformed data
 
 To set up the Google Drive API, follow these steps:
 
@@ -98,13 +93,13 @@ To set up the Google Drive API, follow these steps:
 3. Enter a project name and click **Create**.
 
 ### Enable Google Drive API
-
+![Enable google_drive_api](https://github.com/user-attachments/assets/ef0d834a-d03c-4910-b490-8430bf6be349)
 1. In the dashboard, click on **Library**.
 2. Search for "Google Drive API" and select it.
 3. Click on the **Enable** button.
 
 ### Create Credentials
-
+![Get_google_drive_credential](https://github.com/user-attachments/assets/f05d1833-9132-4cd0-89b5-345643134547)
 1. Go to the **Credentials** tab on the left.
 2. Click on **Create Credentials** and select **OAuth client ID**.
 3. Configure the consent screen as required.
