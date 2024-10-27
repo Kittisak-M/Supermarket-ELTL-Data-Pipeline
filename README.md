@@ -1,4 +1,6 @@
 # Supermarket ELTL pipeline
+### Data Pipeline Architecture
+![supermarket_pipeline_architecture](https://github.com/user-attachments/assets/1c07deff-1a9d-4ad1-90d7-da5eda1d20b8)
 
 ## Overview
 
@@ -8,10 +10,6 @@ This project automates the data pipeline for a supermarket database created usin
 Windows Task Scheduler is used to automate the ELTL processes and database backups for the supermarket database.
 
 ## Project Contents
-
-### Data Pipeline Architecture
-
-![supermarket_pipeline_architecture](https://github.com/user-attachments/assets/1c07deff-1a9d-4ad1-90d7-da5eda1d20b8)
 
 ### Supermarket Database Schema
 ![supermarket_db_diagram](https://github.com/user-attachments/assets/9586407e-83af-4f2d-9552-ce491626b42c)
@@ -28,7 +26,8 @@ Windows Task Scheduler is used to automate the ELTL processes and database backu
 - **Load Raw Data**: Saves raw data to `C:\supermarket\raw_data` and Google Drive.
 - **Transform data**: Processes and saves transformed data to `C:\supermarket\transformed_data` and Google Drive.
 - **Load transform data**: Load transform data to Local MySQL database.
-
+  
+Click [here](https://github.com/Kittisak-M/Supermarket_ELTL/blob/main/ELTL_script.py) to see the full ELTL code.
 ### 4. Database Backup
 - **Local Backup**: Stores backup database by replace the old one with the new one at `C:\supermarket\backup`.
 - **Google Drive Backup**: Upload the local database file located at `C:\supermarket\backup to Google Drive`.
